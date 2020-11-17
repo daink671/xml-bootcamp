@@ -7,5 +7,9 @@
              <item>Pepsi</item>
              <price>2.00</price>
          </entree>
+         <entree>
+             <item>Coca cola</item>
+             <price>2.00</price>
+         </entree>
     </section>
 </cafemenu>
