@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?xml-stylesheet type="text/xsl" href="PaddysCafe.xsl"?>
 <cafemenu>
+<<<<<<< HEAD
     
     <section name="Side Dishes">
          <entree vegetarian="true">
+=======
+    <section name="Side Dishes">
+         <entree vegetarian = "true">
+>>>>>>> fa2f0a69f7de31603dfeaed86d9e27783921fa6f
              <item>Potato salad</item>
              <price>4.95</price>
          </entree>
          <entree>
              <item>Paddy's French Fries</item>
              <price>7.50</price>
+<<<<<<< HEAD
          </entree>        
          <entree>
              <item>Huevos Rancheros</item>
@@ -33,6 +39,63 @@
          <entree vegetarian="true">
              <item>French toast</item>
              <price>5.25</price>
+=======
+         </entree>
+         <entree>
+             <item>Huevos Rancheros</item>
+             <price>8.50</price>
+         </entree>
+    </section>
+<section name="Breakfast">
+    <entree>
+        <item>Two Eggs</item>
+        <price>4.99</price>
+    </entree>
+    <entree>
+             <item>Paddy's Famous Peppers</item>
+             <price>8.29</price>
+         </entree>
+         <entree vegetarian = "true">
+             <item>Bowl of fruit</item>
+             <price>6.99</price>
+         </entree>
+         <entree vegetarian="true">
+             <item>French toast</item>
+             <price>5.25</price>
+         </entree>
+         <entree>
+             <item>Croissant</item>
+             <price>3.99</price>
+         </entree>
+        </section>
+    <section name="Lunch">
+         <entree>
+             <item>Grilled Chicken Sandwich</item>
+             <price>7.99</price>
+         </entree>
+         <entree>
+             <item>Tuna Melt</item>
+             <price>6.99</price>
+         </entree>
+         <entree vegetarian="true">
+             <item>Pasta Salad</item>
+             <price>7.39</price>
+         </entree>
+         
+    </section>
+    <section name="Dinner">
+         <entree>
+             <item>Ribeye Steak</item>
+             <price>19.99</price>
+         </entree>
+         <entree>
+             <item>Chilean Sea Bass</item>
+             <price>12.99</price>
+         </entree>
+         <entree vegetarian="true">
+             <item>Linguini with Grilled Porcini Mushroom</item>
+             <price>9.79</price>
+>>>>>>> fa2f0a69f7de31603dfeaed86d9e27783921fa6f
          </entree>
          <entree>
              <item>Croissant</item>
