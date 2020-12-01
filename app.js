@@ -29,7 +29,15 @@ function jsToXmlFile(filename, obj, cb) {
   fs.writeFile(filepath, xml, cb);
 }
 
-router.get('/', function(req, res) {
+
+router.get('/', function(req, res){
+
+    res.render('index');
+    
+});//to bring/open up the file to user
+
+
+router.get('/get/html', function(req, res) {
 
     res.writeHead(200, {'Content-Type': 'text/html'}); //We are responding to the client that the content served back is HTML and the it exists (code 200)
 
