@@ -31,15 +31,7 @@ function jsToXmlFile(filename, obj, cb) {
   fs.writeFile(filepath, xml, cb);
 }
 
-
-router.get('/', function(req, res){
-
-    res.render('index');
-    
-});//to bring/open up the file to user
-
-
-router.get('/get/html', function(req, res) {
+router.get('/', function(req, res) {
 
     res.render('index');
 
@@ -86,9 +78,32 @@ router.post('/post/json', function (req, res) {
 
 });
 
+router.post('/post/delete', function (req, res) {
+
+    function deleteJSON(obj) {
+
+        console.log(obj)
+
+        xmlFileToJs('PaddysCafe.xml', function (err, result) {
+            if (err) throw (err);
+            
+            delete result.cafemenu.section[obj.section].entree[obj.entree];
+
+            console.log(JSON.stringify(result, null, "  "));
+
+            jsToXmlFile('PaddysCafe.xml', result, function(err){
+                if (err) console.log(err);
+            });
+        });
+    };
+
+    deleteJSON(req.body);
+
+    res.redirect('back');
+
+});
+
 server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function () {
     var addr = server.address();
     console.log("Server listnening at", addr.address + ":" + addr.port);
 });
-
-//final version save
