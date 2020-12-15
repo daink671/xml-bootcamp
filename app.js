@@ -31,7 +31,15 @@ function jsToXmlFile(filename, obj, cb) {
   fs.writeFile(filepath, xml, cb);
 }
 
-router.get('/', function(req, res) {
+
+router.get('/', function(req, res){
+
+    res.render('index');
+    
+});//to bring/open up the file to user
+
+
+router.get('/get/html', function(req, res) {
 
     res.render('index');
 
@@ -82,3 +90,5 @@ server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function ()
     var addr = server.address();
     console.log("Server listnening at", addr.address + ":" + addr.port);
 });
+
+//final version save
