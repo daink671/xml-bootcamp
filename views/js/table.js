@@ -16,9 +16,13 @@ function draw_table()
 		});
 	};
 	$.getJSONuncached("/get/html")
+<<<<<<< HEAD
 };
 
 function select_row()
+=======
+};function select_row()
+>>>>>>> 78e6dc0c025928a5720ca9ed67a7f3f30c9f3add
 {
 	$("#menuTable tbody tr[id]").click(function ()
 	{
@@ -30,6 +34,10 @@ function select_row()
 	})
 };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 78e6dc0c025928a5720ca9ed67a7f3f30c9f3add
 function delete_row(sec, ent)
 {
 	$("#delete").click(function ()
