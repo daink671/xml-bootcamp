@@ -10,36 +10,36 @@ var router = express(); //We set our routing to be handled by Express
 var server = http.createServer(router); //This is where our server gets created
 
 router.use(express.static(path.resolve(__dirname, 'views'))); //We define the views folder as the one where all static content will be served
-router.use(express.urlencoded({extended: true})); //We allow the data sent from the client to be coming in as part of the URL in GET and POST requests
+router.use(express.urlencoded({ extended: true })); //We allow the data sent from the client to be coming in as part of the URL in GET and POST requests
 router.use(express.json()); //We include support for JSON that is coming from the client
 
 // Function to read in XML file and convert it to JSON
 function xmlFileToJs(filename, cb) {
-  var filepath = path.normalize(path.join(__dirname, filename));
-  fs.readFile(filepath, 'utf8', function(err, xmlStr) {
-    if (err) throw (err);
-    xml2js.parseString(xmlStr, {}, cb);
-  });
+    var filepath = path.normalize(path.join(__dirname, filename));
+    fs.readFile(filepath, 'utf8', function (err, xmlStr) {
+        if (err) throw (err);
+        xml2js.parseString(xmlStr, {}, cb);
+    });
 }
 
 //Function to convert JSON to XML and save it
 function jsToXmlFile(filename, obj, cb) {
-  var filepath = path.normalize(path.join(__dirname, filename));
-  var builder = new xml2js.Builder();
-  var xml = builder.buildObject(obj);
-  fs.unlinkSync(filepath);
-  fs.writeFile(filepath, xml, cb);
+    var filepath = path.normalize(path.join(__dirname, filename));
+    var builder = new xml2js.Builder();
+    var xml = builder.buildObject(obj);
+    fs.unlinkSync(filepath);
+    fs.writeFile(filepath, xml, cb);
 }
 
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
 
     res.render('index');
 
 });
 
-router.get('/get/html', function(req, res) {
+router.get('/get/html', function (req, res) {
 
-    res.writeHead(200, {'Content-Type': 'text/html'}); //We are responding to the client that the content served back is HTML and the it exists (code 200)
+    res.writeHead(200, { 'Content-Type': 'text/html' }); //We are responding to the client that the content served back is HTML and the it exists (code 200)
 
     var xml = fs.readFileSync('PaddysCafe.xml', 'utf8'); //We are reading in the XML file
     var xsl = fs.readFileSync('PaddysCafe.xsl', 'utf8'); //We are reading in the XSL file
@@ -61,12 +61,12 @@ router.post('/post/json', function (req, res) {
 
         xmlFileToJs('PaddysCafe.xml', function (err, result) {
             if (err) throw (err);
-            
-            result.cafemenu.section[obj.sec_n].entree.push({'item': obj.item, 'price': obj.price});
+
+            result.cafemenu.section[obj.sec_n].entree.push({ 'item': obj.item, 'price': obj.price });
 
             console.log(JSON.stringify(result, null, "  "));
 
-            jsToXmlFile('PaddysCafe.xml', result, function(err){
+            jsToXmlFile('PaddysCafe.xml', result, function (err) {
                 if (err) console.log(err);
             });
         });
@@ -86,12 +86,12 @@ router.post('/post/delete', function (req, res) {
 
         xmlFileToJs('PaddysCafe.xml', function (err, result) {
             if (err) throw (err);
-            
+
             delete result.cafemenu.section[obj.section].entree[obj.entree];
 
             console.log(JSON.stringify(result, null, "  "));
 
-            jsToXmlFile('PaddysCafe.xml', result, function(err){
+            jsToXmlFile('PaddysCafe.xml', result, function (err) {
                 if (err) console.log(err);
             });
         });
@@ -107,3 +107,32 @@ server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function ()
     var addr = server.address();
     console.log("Server listnening at", addr.address + ":" + addr.port);
 });
+
+// // Example starter JavaScript for disabling form submissions if there are invalid fields
+// (function () {
+//   'use strict'
+
+//   // Fetch all the forms we want to apply custom Bootstrap validation styles to
+//   var forms = document.querySelectorAll('.needs-validation')
+
+//   // Loop over them and prevent submission
+//   Array.prototype.slice.call(forms)
+//     .forEach(function (form) {
+//       form.addEventListener('submit', function (event) {
+//         if (!form.checkValidity()) {
+//           event.preventDefault()
+//           event.stopPropagation()
+//         }
+
+//         form.classList.add('was-validated')
+//       }, false)
+//     })
+// })()
+
+// function isInputNumber(evt) {
+//     var ch = String.fromCharCode(evt.which);
+
+//     if (!(/[0-9]/.test(ch))) {
+//         evt.preventDefault();
+//     }
+// }

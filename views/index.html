@@ -61,9 +61,20 @@
                             <option value="1">Science Fiction</option>
                             <option value="2">Romance</option>
                         </select>
-                        <input class="form-control mt-3" type="text" name="item" placeholder="Item">
-                        <input class="form-control mt-3" type="text" name="price" placeholder="Price">
-                        <button type="submit" class="btn btn-primary btn-block mt-3">Submit</button>
+                        <form class="row g-3 needs-validation" novalidate>
+                            <input class="form-control mt-3" type="text" name="item" placeholder="Movie" 
+                                id="validationCustom1" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid movie name.
+                            </div>
+                            <!-- <input class="form-control mt-3" type="text" name="price" placeholder="Price" onkeypress="isInputNumber(event)"> -->
+                            <input class="form-control mt-3" type="text" name="price" placeholder="Price"
+                                id="validationCustom2" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid movie price.
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block mt-3">Submit</button>
+                        </form>
                     </div>
                 </form>
                 <button id="delete" class="btn btn-danger btn-block mt-3">Delete</button>
