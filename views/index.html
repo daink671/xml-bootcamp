@@ -42,13 +42,16 @@
     </nav>
 
     <!-- Page Content -->
+    <div class="jumbotron big-banner" style="height: 500px; padding-top: 150px;">
+        <div class="col-lg-12 text-light">
+            <h1 class="mt-5 text-center">Dublin Cinema</h1>
+            <h3 class="mt-5 text-center">To watch films and to experience them</h3>
+            <p class="lead text-center">*10% sale for Science Fiction movies 20% sale for Romance movies*</p>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-center">
-                <h1 class="mt-5">To watch films and to experience them</h1>
-                <p class="lead">*10% sale for Science Fiction movies*</p>
-                <p class="lead">*20% sale for Romance movies*</p>
-            </div>
+
             <div id="results" class="col-lg-8 order-2 mb-5"></div>
             <div class="col-lg-4 order-1">
                 <form enctype="application/json" action="/post/json" method="post">
@@ -92,12 +95,12 @@
     <script src="js/table.js"></script>
     <script src="js/PaddysCafe.js"></script>
     <script>
-        window.addEventListener("load", function() {
+        window.addEventListener("load", function () {
             document.forms[1].txtBillAmt.value = calculateBill('menuTable');
-            document.querySelector("#calcBill").addEventListener("click", function() {
+            document.querySelector("#calcBill").addEventListener("click", function () {
                 document.forms[1].txtBillAmt.value = calculateBill('menuTable');
             });
-            document.querySelector("#showVeg").addEventListener("click", function() {
+            document.querySelector("#showVeg").addEventListener("click", function () {
                 highlightVegetarian('menuTable', this.checked);
             });
         });

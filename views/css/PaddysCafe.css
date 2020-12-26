@@ -36,3 +36,8 @@ table, th, td {
             background-color: #dc3545;
             color: #FFF;
 }
+
+.big-banner{
+    background-image: url(../img/cinema.jpg);
+    background-size: 100% 100%;
+}
