@@ -13,6 +13,8 @@ router.use(express.static(path.resolve(__dirname, 'views'))); //We define the vi
 router.use(express.urlencoded({ extended: true })); //We allow the data sent from the client to be coming in as part of the URL in GET and POST requests
 router.use(express.json()); //We include support for JSON that is coming from the client
 
+
+
 // Function to read in XML file and convert it to JSON
 function xmlFileToJs(filename, cb) {
     var filepath = path.normalize(path.join(__dirname, filename));
@@ -62,7 +64,7 @@ router.post('/post/json', function (req, res) {
         xmlFileToJs('PaddysCafe.xml', function (err, result) {
             if (err) throw (err);
 
-            result.cafemenu.section[obj.sec_n].entree.push({ 'item': obj.item, 'price': obj.price });
+            result.Movielist.section[obj.sec_n].movie.push({ 'item': obj.item, 'price': obj.price });
 
             console.log(JSON.stringify(result, null, "  "));
 
@@ -87,7 +89,7 @@ router.post('/post/delete', function (req, res) {
         xmlFileToJs('PaddysCafe.xml', function (err, result) {
             if (err) throw (err);
 
-            delete result.cafemenu.section[obj.section].entree[obj.entree];
+            delete result.Movielist.section[obj.section].movie[obj.movie];
 
             console.log(JSON.stringify(result, null, "  "));
 
@@ -108,31 +110,3 @@ server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function ()
     console.log("Server listnening at", addr.address + ":" + addr.port);
 });
 
-// // Example starter JavaScript for disabling form submissions if there are invalid fields
-// (function () {
-//   'use strict'
-
-//   // Fetch all the forms we want to apply custom Bootstrap validation styles to
-//   var forms = document.querySelectorAll('.needs-validation')
-
-//   // Loop over them and prevent submission
-//   Array.prototype.slice.call(forms)
-//     .forEach(function (form) {
-//       form.addEventListener('submit', function (event) {
-//         if (!form.checkValidity()) {
-//           event.preventDefault()
-//           event.stopPropagation()
-//         }
-
-//         form.classList.add('was-validated')
-//       }, false)
-//     })
-// })()
-
-// function isInputNumber(evt) {
-//     var ch = String.fromCharCode(evt.which);
-
-//     if (!(/[0-9]/.test(ch))) {
-//         evt.preventDefault();
-//     }
-// }

@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<cafemenu>
+<Movielist>
   <section name="Action">
-    <entree vegetarian="true">
+    <movie popular="true">
       <item>007 Casino Royale</item>
       <price>8.00</price>
-    </entree>
-    <entree>
+    </movie>
+    <movie>
       <item>007 Quantum of Solace</item>
       <price>8.00</price>
-    </entree>
-    <entree>
+    </movie>
+    <movie>
       <item>007 Skyfall</item>
       <price>8.00</price>
-    </entree>
-    <entree>
+    </movie>
+    <movie>
       <item>007 Spectre</item>
       <price>8.00</price>
-    </entree>
+    </movie>
   </section>
   <section name="Science Fiction">
-    <entree>
+    <movie>
       <item>Star Wars Episode IV: A New Hope</item>
       <price>7.20</price>
-    </entree>
-    <entree>
+    </movie>
+    <movie>
       <item>Star Wars Episode V: The Empire Strikes Back</item>
       <price>7.20</price>
-    </entree>
-    <entree vegetarian="true">
+    </movie>
+    <movie popular="true">
       <item>Star Wars Episode VI: Return of the Jedi</item>
       <price>7.20</price>
-    </entree>
-    <entree vegetarian="true">
+    </movie>
+    <movie popular="true">
       <item>Star Wars Episode I: The Phantom Menace</item>
       <price>7.20</price>
-    </entree>
-    <entree>
+    </movie>
+    <movie>
       <item>Star Wars Episode II: Attack of the Clones</item>
       <price>7.20</price>
-    </entree>
-    <entree>
+    </movie>
+    <movie>
       <item>Star Wars Episode III: Revenge of the Sith</item>
       <price>7.20</price>
-    </entree>
+    </movie>
   </section>
   <section name="Romance">
-    <entree>
+    <movie>
       <item>The Notebook</item>
       <price>6.40</price>
-    </entree>
-    <entree>
+    </movie>
+    <movie>
       <item>Eternal Sunshine</item>
       <price>6.40</price>
-    </entree>
-    <entree vegetarian="true">
+    </movie>
+    <movie popular="true">
       <item>Moulin Rouge</item>
       <price>6.40</price>
-    </entree>
+    </movie>
   </section>
-</cafemenu>
+</Movielist>

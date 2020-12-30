@@ -29,7 +29,7 @@ function highlightVegetarian(idTable, bShowVeg) {
     // walk through each of the table rows and see if it has a 
     // "vegetarian" attribute on it.
     for (i = 0; i < aTRs.length; i++) {
-        if (aTRs[i].getAttribute('vegetarian') == "true") {
+        if (aTRs[i].getAttribute('popular') == "true") {
             if (bShowVeg) {
                 aTRs[i].style.backgroundColor = "lightGreen";
             } else {

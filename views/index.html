@@ -63,17 +63,11 @@
                         </select>
                         <form class="row g-3 needs-validation" novalidate>
                             <input class="form-control mt-3" type="text" name="item" placeholder="Movie" 
-                                id="validationCustom1" required>
-                            <div class="invalid-feedback">
-                                Please provide a valid movie name.
-                            </div>
+                                id="item" required>
                             <!-- <input class="form-control mt-3" type="text" name="price" placeholder="Price" onkeypress="isInputNumber(event)"> -->
                             <input class="form-control mt-3" type="text" name="price" placeholder="Price"
-                                id="validationCustom2" required>
-                            <div class="invalid-feedback">
-                                Please provide a valid movie price.
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block mt-3">Submit</button>
+                                id="price" required>
+                            <button type="submit" class="btn btn-primary btn-block mt-3" onclick="CheckDecimal(price)">Submit</button>
                         </form>
                     </div>
                 </form>
@@ -86,6 +80,7 @@
                         </div>
                         <input type="text" class="form-control" aria-label="Total" name="txtBillAmt">
                         <div class="input-group-append">
+                            <p class="text-muted text-center">If you want to check popular movies, please tick the box</p>
                             <div class="input-group-text">
                                 <input type="checkbox" id="showVeg" aria-label="Checkbox for following text input">
                             </div>
