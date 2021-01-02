@@ -55,4 +55,4 @@ function CheckDecimal(inputtxt) {
         alert('Please enter vaild price for this movie')
         return false;
     }
-} 
+}
