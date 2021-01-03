@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Movielist><!--change this table name to movielist-->
+<Movielist>
   <section name="Action">
-    <movie popular="true"><!--change to popular, so if user tick the box on the main page, it will highlight-->
+    <movie popular="true">
       <item>007 Casino Royale</item>
       <price>8.00</price>
     </movie>
