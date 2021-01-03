@@ -32,14 +32,14 @@
                         <a class="nav-link" href="#">Home
                             <span class="sr-only">(current)</span>
                         </a>
-                    </li>
+                    </li><!--there are no reason to add more pages so far-->
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Page Content -->
-    <div class="jumbotron big-banner" style="height: 500px; padding-top: 150px;">
+    <div class="jumbotron big-banner" style="height: 500px; padding-top: 150px;"><!--bring background picture-->
         <div class="col-lg-12 text-light">
             <h1 class="mt-5 text-center">Dublin Cinema</h1>
             <h3 class="mt-5 text-center">To watch films and to experience them</h3>
@@ -60,7 +60,7 @@
                         </select>
                         <form class="row g-3 needs-validation" novalidate>
                             <input class="form-control mt-3" type="text" name="item" placeholder="Movie" 
-                                id="item" required>
+                                id="item" required><!--required : if user did not insert any, it will show message user has to put some value-->
                             <input class="form-control mt-3" type="text" name="price" placeholder="Price"
                                 id="price" required>
                             <button type="submit" class="btn btn-primary btn-block mt-3" onclick="return CheckDecimal(price)">Submit</button>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--main table xml to xsd-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Movielist">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="section">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="movie">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="item"/>
+                                        <xs:element type="xs:integer" name="price"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="popular" type="xs:string"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="name" type="xs:string"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

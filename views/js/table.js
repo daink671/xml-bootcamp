@@ -46,13 +46,15 @@ $(document).ready(function () {
     draw_table();
 });
 
+//this will check if user insert correct price for the movie. 
+//i tried to put into app.js but it wasn't working so i added up there
 function CheckDecimal(inputtxt) {
-    var decimal = /^[-+]?[0-9]+\.[0-9]+$/;
-    if (inputtxt.value.match(decimal)) {
+    var decimal = /^[-+]?[0-9]+\.[0-9]+$/;//it will check if this input is decimal or not
+    if (inputtxt.value.match(decimal)) {//if userinput is decimal, it will work
         return true;
     }
     else {
-        alert('Please enter vaild price for this movie')
-        return false;
+        alert('Please enter vaild price for this movie. It should be the decimal number EX: 8.00, 7.20')
+        return false;//if userinput is not correct, it will not work
     }
 }
